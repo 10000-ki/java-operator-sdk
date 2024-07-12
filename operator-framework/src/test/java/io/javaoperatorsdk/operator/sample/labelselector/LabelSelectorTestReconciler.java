@@ -2,7 +2,7 @@ package io.javaoperatorsdk.operator.sample.labelselector;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.javaoperatorsdk.operator.api.config.informer.InformerConfig;
+import io.javaoperatorsdk.operator.api.config.informer.Informer;
 import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.support.TestExecutionInfoProvider;
 
@@ -10,7 +10,7 @@ import static io.javaoperatorsdk.operator.sample.labelselector.LabelSelectorTest
 import static io.javaoperatorsdk.operator.sample.labelselector.LabelSelectorTestReconciler.LABEL_VALUE;
 
 @ControllerConfiguration(
-    informerConfig = @InformerConfig(labelSelector = LABEL_KEY + "=" + LABEL_VALUE))
+    informer = @Informer(labelSelector = LABEL_KEY + "=" + LABEL_VALUE))
 public class LabelSelectorTestReconciler
     implements Reconciler<LabelSelectorTestCustomResource>, TestExecutionInfoProvider {
 

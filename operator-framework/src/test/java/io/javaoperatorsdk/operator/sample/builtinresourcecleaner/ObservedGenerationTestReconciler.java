@@ -3,10 +3,10 @@ package io.javaoperatorsdk.operator.sample.builtinresourcecleaner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.fabric8.kubernetes.api.model.Service;
-import io.javaoperatorsdk.operator.api.config.informer.InformerConfig;
+import io.javaoperatorsdk.operator.api.config.informer.Informer;
 import io.javaoperatorsdk.operator.api.reconciler.*;
 
-@ControllerConfiguration(informerConfig = @InformerConfig(labelSelector = "builtintest=true"))
+@ControllerConfiguration(informer = @Informer(labelSelector = "builtintest=true"))
 public class ObservedGenerationTestReconciler
     implements Reconciler<Service>, Cleaner<Service> {
 
